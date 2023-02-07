@@ -4,6 +4,8 @@ const Data = {
         name: 'Nico Barbieri',
         wallet: 100,
         bets: [1],
+        email: "nico@example.com",
+        password: "1234",
     }],
 
     bets: [{
@@ -11,6 +13,16 @@ const Data = {
         id: 1,
         numbers: [1, 2, 3, 4, 5, 6],
     }]
+}
+
+export const authUser = (email, password) => {
+    console.log(email, password)
+    const is_user = Data.users.find((entity) => entity.email === email && entity.password === password);
+    if (is_user) {
+        return is_user.id;
+    } else {
+        return false;
+    }
 }
 
 /**
