@@ -16,15 +16,17 @@ const drawNumbers = (limit = 6) => {
 };
 
 const compareBets = (randomDraw, userBets) => {
-  const wonBets = [];
+  const results = []
   const drawNumbers = randomDraw.numbers
   userBets.forEach((bet)=>{
     const betNumbers = bet.numbers;
     const numb = betNumbers.filter((number)=>{
       return drawNumbers.includes(number)
-    })
-    if()
+    })    
+    bet.selected_numbers = numb;
+    bet.status = "done";
+    bet.won = numb.length >= 2; 
+    results.push(bet);
   })
+  return results
 };
-
-compareBets()
