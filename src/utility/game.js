@@ -2,7 +2,7 @@ const numbers = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
 
-export const drawNumbers = (limit = 6) => {
+const drawNumbers = (limit = 6) => {
   const selected = [];
   while (selected.length < limit) {
     const index = Math.floor(Math.random() * numbers.length);
@@ -15,4 +15,16 @@ export const drawNumbers = (limit = 6) => {
   return selected;
 };
 
-const compareBets = (randomDraw, userBets) => {};
+const compareBets = (randomDraw, userBets) => {
+  const wonBets = [];
+  const drawNumbers = randomDraw.numbers
+  userBets.forEach((bet)=>{
+    const betNumbers = bet.numbers;
+    const numb = betNumbers.filter((number)=>{
+      return drawNumbers.includes(number)
+    })
+    if()
+  })
+};
+
+compareBets()

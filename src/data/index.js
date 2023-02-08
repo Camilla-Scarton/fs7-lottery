@@ -18,9 +18,52 @@ const Data = {
       selected_numbers: [],
       status: "pending", //"pending" |  "done"
       won: false,
+      draw_id: 1
     },
   ],
+
+  draws:[
+    {
+      id: 1,
+      numbers: [],
+      status: "pending",   //"pending" |  "done"
+      jackpot: 100,
+      draw_date: null
+    }
+  ],
+  settings: [
+    {
+      id: 1,
+      label: "DRAWS_SETTINGS",
+      steps: [
+        {
+          counter: 2,
+          value: 5
+        },
+        {
+          counter: 3,
+          value: 10
+        },
+        {
+          counter: 4,
+          value: 15
+        },
+        {
+          counter: 5,
+          value: 30
+        },
+        {
+          counter: 6,
+          value: 40
+        }
+      ]
+    }
+  ]
 };
+
+export const getSettings = (label) =>{
+    return Data.settings.find(item => item.label === label)
+}
 
 export const authUser = (email, password) => {
   const is_user = Data.users.find(
