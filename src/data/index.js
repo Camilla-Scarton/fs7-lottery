@@ -125,4 +125,8 @@ export const save = (collectionName, payload) => {
   });
 };
 
+export const findActiveDraw = () =>{
+  return Data.draws.find((item) =>item.status === "pending")
+}
+
 export default Data;
